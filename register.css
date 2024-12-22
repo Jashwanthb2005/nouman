@@ -1,0 +1,16 @@
+.register-container {
+    max-width: 500px;
+    padding: 20px;
+    margin: auto;
+    
+    background-color: #383737;
+    border-radius: 10px;
+    color: white; /* Ensure good contrast for dark background */
+    width: fit-content;
+    height: 30vh;
+    padding-top: 50px;
+  }
+  
+.form{
+    margin: 10px;
+}

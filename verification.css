@@ -1,0 +1,28 @@
+body{
+    text-align: center;
+}
+
+.verification-container{
+    background-color: #383737;
+    width: 400px;
+    padding: 10px;
+    border-radius: 10px;
+    margin: auto;
+ }
+ 
+ .verification-container h2{
+    text-align: center;
+ }
+
+ form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+ }
+ form input{
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+}

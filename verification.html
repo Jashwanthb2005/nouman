@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OTP Verification</title>
+  <link rel="stylesheet" href="verification.css">
+</head>
+<body>
+  <div class="verification-container">
+    <h2>OTP Verification</h2>
+    <form id="verificationForm">
+      <input type="text" id="otp" placeholder="Enter OTP..." />
+      <button type="submit">Verify</button>
+    </form>
+  </div>
+  <script>
+    document.getElementById('verificationForm').addEventListener('submit', async function (e) {
+      e.preventDefault();
+      const userOTP = document.getElementById('otp').value;
+      if (!userOTP) {
+        alert("Please enter OTP...");
+        return;
+      }
+      try {
+        const response = await fetch("http://127.0.0.1:4010/verificationcheck", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ otp: userOTP }),
+        });
+        const data = await response.json();
+        if (data.error) {
+          alert(data.error);
+        } else {
+          window.location.href = "/frontend/index.html";
+        }
+      } catch (error) {
+        alert("An error occurred. Please try again.");
+      }
+    });
+  </script>
+</body>
+</html>
